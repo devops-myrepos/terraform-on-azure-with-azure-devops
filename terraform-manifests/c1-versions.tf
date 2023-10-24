@@ -29,4 +29,10 @@ provider "azurerm" {
 # Simple comment
 # QA, Stage and Prod env added
 
-
+# Terraform State Storage to Azure Storage Container
+  backend "azurerm" {
+    resource_group_name   = "terraform-storage-rg"
+    storage_account_name  = "terraformstate201"
+    container_name        = "tfstatefiles"
+    key                   = "project-1-eastus2-terraform.tfstate"
+  }   
